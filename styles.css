@@ -226,7 +226,8 @@ nav {
 /* MAIN SECTION */
 
 .main-container{
-  background-color: #c7c7c7;
+  position: relative;
+  background-color: transparent;
   height: 100vh;
   width: 100vw;
 
@@ -241,6 +242,20 @@ nav {
 
 .main-container h2{
   margin-bottom: 50px;
+}
+
+#bg-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Asegura que el fondo esté detrás del contenido */
+}
+
+#bg-wrap svg {
+  width: 100%;
+  height: 100%;
 }
 
 #content-wrap {
