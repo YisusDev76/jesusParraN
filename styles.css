@@ -12,13 +12,10 @@
   --md: 16px;
   --lg: 18px;
 }
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+
 body {
   margin: 0;
+  overflow-x: hidden;
   font-family: "Quicksand", sans-serif;
   background-color: var(--primary);
 }
@@ -226,10 +223,24 @@ nav {
   }
 }
 
-/* Para el main section */
-#bg-wrap {
-  position: relative;
-  overflow: hidden; /* Oculta cualquier parte del SVG que desborde */
+/* MAIN SECTION */
+
+.main-container{
+  background-color: #c7c7c7;
+  height: 100vh;
+  width: 100vw;
+
+}
+
+.main-container h1{
+  font-size: 40px; /* Ajusta al tamaño que desees */
+  color: var(--white);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2), 9px 9px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0px;
+}
+
+.main-container h2{
+  margin-bottom: 50px;
 }
 
 #content-wrap {
@@ -245,20 +256,8 @@ nav {
   align-items: center;
 }
 
-h1 {
-  font-size: 60px; /* Ajusta al tamaño que desees */
-  color: var(--white);
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2),
-    9px 9px 0px rgba(0, 0, 0, 0.2); /* Esto agrega múltiples sombras para el efecto 3D */
-  margin-bottom: 0px;
-}
-
-h2 {
-  margin-bottom: 40px;
-}
-
 .icons-container {
-  display: flex; /* Habilita flexbox para los enlaces */
+  display: flex;
   justify-content: center; /* Centra los elementos horizontalmente */
   align-items: center; /* Centra los elementos verticalmente */
   flex-wrap: wrap; /* Permite que los elementos se ajusten según el espacio disponible */
@@ -268,34 +267,22 @@ h2 {
   margin: 0 20px;
   background-color: var(--text-input-field); /* Fondo blanco inicial */
   border-radius: 50%; /* Hace que el elemento sea un círculo */
-  width: 90px; /* Ancho del círculo */
-  height: 90px; /* Altura del círculo */
   display: flex;
   justify-content: center;
   align-items: center;
   transition: background 0.4s; /* Transición suave para el fondo */
   background-image: linear-gradient(to bottom right, var(--tertiary), white);
-}
-
-.icon-circle img {
-  width: 50%; /* Ajusta el ancho del SVG al 86% del contenedor .icon-circle */
-  height: auto; /* Mantiene la proporción del SVG ajustando su altura automáticamente */
+  width: 70px;
+  height: 70px; /* Altura del círculo */
 }
 
 .icon-circle:hover {
   background-image: linear-gradient(to bottom right, var(--primary), white);
 }
-/* Para DeskTop */
-@media (min-width: 641px) {
-  .mobile-menu {
-    display: none;
-  }
 
-  h1 {
-    font-size: 72px; /* Ajusta al tamaño que desees */
-    color: var(--white);
-    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2),
-      9px 9px 0px rgba(0, 0, 0, 0.2); /* Esto agrega múltiples sombras para el efecto 3D */
-    margin-bottom: 0px;
-  }
+.icon-circle img {
+  width: 50%;
+  height: auto; /* Mantiene la proporción del SVG ajustando su altura automáticamente */
 }
+
+
