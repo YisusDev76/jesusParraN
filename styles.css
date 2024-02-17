@@ -7,7 +7,7 @@
   --hospital-green: #acd9b2;
   --primary: #1f1f1f;
   --secondary: #292d3e;
-  --tertiary: rgba(86, 88, 109, .9);
+  --tertiary: rgba(86, 88, 109, 0.9);
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
@@ -132,6 +132,7 @@ nav {
   border-radius: 6px;
   padding: 20px 20px 0 20px;
 }
+
 .desktop-menu ul {
   list-style: none;
   padding: 0;
@@ -228,15 +229,13 @@ nav {
 /* Para el main section */
 #bg-wrap {
   position: relative;
-  width: 100vw;
-  height: 94vh; /* 100% del viewport height */
   overflow: hidden; /* Oculta cualquier parte del SVG que desborde */
 }
 
 #content-wrap {
   position: absolute;
-  top: 50%; /* Centra verticalmente */
-  left: 50%; /* Centra horizontalmente */
+  top: 50%;
+  left: 50%; 
   transform: translate(-50%, -50%);
   text-align: center;
   width: 75%;
@@ -247,14 +246,14 @@ nav {
 }
 
 h1 {
-  font-size: 72px; /* Ajusta al tamaño que desees */
+  font-size: 60px; /* Ajusta al tamaño que desees */
   color: var(--white);
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2),
     9px 9px 0px rgba(0, 0, 0, 0.2); /* Esto agrega múltiples sombras para el efecto 3D */
-  margin-bottom: 0px;  
+  margin-bottom: 0px;
 }
 
-h2{
+h2 {
   margin-bottom: 40px;
 }
 
@@ -276,7 +275,6 @@ h2{
   align-items: center;
   transition: background 0.4s; /* Transición suave para el fondo */
   background-image: linear-gradient(to bottom right, var(--tertiary), white);
-
 }
 
 .icon-circle img {
@@ -287,9 +285,17 @@ h2{
 .icon-circle:hover {
   background-image: linear-gradient(to bottom right, var(--primary), white);
 }
-
+/* Para DeskTop */
 @media (min-width: 641px) {
   .mobile-menu {
     display: none;
+  }
+
+  h1 {
+    font-size: 72px; /* Ajusta al tamaño que desees */
+    color: var(--white);
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2),
+      9px 9px 0px rgba(0, 0, 0, 0.2); /* Esto agrega múltiples sombras para el efecto 3D */
+    margin-bottom: 0px;
   }
 }
