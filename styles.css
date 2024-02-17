@@ -7,11 +7,13 @@
   --hospital-green: #acd9b2;
   --primary: #1f1f1f;
   --secondary: #292d3e;
+  --tertiary: rgba(86, 88, 109, .9);
   --sm: 14px;
   --md: 16px;
   --lg: 18px;
 }
-html, body {
+html,
+body {
   max-width: 100vw;
   overflow-x: hidden;
 }
@@ -233,37 +235,58 @@ nav {
 
 #content-wrap {
   position: absolute;
-  top: 50%;  /* Centra verticalmente */
+  top: 50%; /* Centra verticalmente */
   left: 50%; /* Centra horizontalmente */
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 70%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
   font-size: 72px; /* Ajusta al tamaño que desees */
-  color: #ffffff;
-  text-shadow: 3px 3px 0px rgba(0,0,0,0.2), 
-               6px 6px 0px rgba(0,0,0,0.2), 
-               9px 9px 0px rgba(0,0,0,0.2); /* Esto agrega múltiples sombras para el efecto 3D */
+  color: var(--white);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2),
+    9px 9px 0px rgba(0, 0, 0, 0.2); /* Esto agrega múltiples sombras para el efecto 3D */
+  margin-bottom: 0px;  
+}
+
+h2{
+  margin-bottom: 40px;
+}
+
+.icons-container {
+  display: flex; /* Habilita flexbox para los enlaces */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten según el espacio disponible */
 }
 
 .icon-circle {
-  background-color: white; /* Fondo blanco inicial */
+  margin: 0 20px;
+  background-color: var(--text-input-field); /* Fondo blanco inicial */
   border-radius: 50%; /* Hace que el elemento sea un círculo */
-  width: 100px; /* Ancho del círculo */
-  height: 100px; /* Altura del círculo */
+  width: 90px; /* Ancho del círculo */
+  height: 90px; /* Altura del círculo */
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.3s; /* Transición suave para el fondo */
+  transition: background 0.4s; /* Transición suave para el fondo */
+  background-image: linear-gradient(to bottom right, var(--tertiary), white);
+
+}
+
+.icon-circle img {
+  width: 50%; /* Ajusta el ancho del SVG al 86% del contenedor .icon-circle */
+  height: auto; /* Mantiene la proporción del SVG ajustando su altura automáticamente */
 }
 
 .icon-circle:hover {
-  background-image: linear-gradient(to bottom right, var(--secondary), white);
+  background-image: linear-gradient(to bottom right, var(--primary), white);
 }
-
-
 
 @media (min-width: 641px) {
   .mobile-menu {
