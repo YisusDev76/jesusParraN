@@ -5,6 +5,7 @@
   --very-light-pink: #c7c7c7;
   --text-input-field: #f7f7f7;
   --hospital-green: #acd9b2;
+  --dark-color-logo:#ac9b7f;
   --primary: #1f1f1f;
   --secondary: #292d3e;
   --tertiary: rgba(86, 88, 109, 0.9);
@@ -175,13 +176,21 @@ nav {
 
 /* Menu en mobile */
 .mobile-menu {
-  background-color: var(--white);
-  position: absolute;
-  top: 60px;
+  background-color: var(--dark-color-logo);
+  position: fixed;
+  top: 50px;
+  height: 100vh;
   /* padding: 24px; */
   left: 0;
   width: calc(100% - 24px);
   padding-left: 24px;
+  transform: translateX(-100%); /* Lo mueve fuera de la pantalla a la izquierda */
+  transition: transform 0.5s ease; /* Suaviza la transición */
+}
+
+/* Clase para cuando el menú está activo */
+.mobile-menu.active {
+  transform: translateX(0); /* Lo regresa a su posición original */
 }
 .mobile-menu a {
   text-decoration: none;

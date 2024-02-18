@@ -30,7 +30,8 @@ function toggleDesktopMenu() {
 }
 
 function toggleMobileMenu() {
-    mobileMenu.classList.toggle('inactive');
+    // mobileMenu.classList.toggle('inactive');
+    mobileMenu.classList.toggle('active'); // Cambia 'inactive' a 'active'
 }
 
 function toogleCarritoAside() {
