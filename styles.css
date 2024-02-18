@@ -46,19 +46,26 @@ body {
   background: #555; /* o el color que prefieras al pasar el mouse */
 }
 
-/* NAVbar (general) */
+/* NAvbar (general) */
 nav {
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
-  /* border-bottom: 1px solid var(--very-light-pink); */
   background-color: var(--secondary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 .menu {
   display: none;
+  margin-left: 24px;
 }
+
 .logo {
   width: 50px;
+  padding-right: 0px;
 }
 .navbar-left ul,
 .navbar-right ul {
@@ -72,6 +79,15 @@ nav {
 .navbar-left {
   display: flex;
 }
+
+.navbar-left a {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100%; /* Asegúrate de definir un alto */
+  width: 100%; /* Y un ancho para el elemento <a>, si es necesario */
+}
+
 .navbar-left ul {
   margin-left: 12px;
 }
@@ -92,7 +108,7 @@ nav {
   color: var(--very-light-pink);
   cursor: pointer;
   font-size: var(--sm);
-  margin-right: 12px;
+  margin-right: 44px;
 }
 /* SUGERENCIA DE CODIGO, PARA QUE EL TEXTO CAMBIE DE COLOR */
 .navbar-email:hover {
@@ -207,19 +223,17 @@ nav {
   .desktop-menu {
     display: none;
   }
-  aside {
-    width: 100%;
+
+  body{
+    background-color:black;
   }
 
-  .cards-container {
-    grid-template-columns: repeat(auto-fill, 140px);
+  nav{
+    padding: 0 0px;
   }
-  .product-card {
-    width: 140px;
-  }
-  .product-card img {
-    width: 140px;
-    height: 140px;
+
+  .logo {
+    padding-right: 25px;
   }
 }
 
