@@ -56,6 +56,34 @@ function openProductDetailAside() {
     desktopMenu.classList.add('inactive');
 }
 
+document.querySelector('.icon-button').addEventListener('click', function() {
+    const email = 'chuchin1770@gmail.com'; // Asegúrate de usar el método adecuado para obtener este valor si cambia dinámicamente
+    navigator.clipboard.writeText(email).then(function() {
+    //   alert('Email copied to clipboard!');
+    console.log("entra al toastify");
+      Toastify({
+        text: "Email copiado en el portapapeles!!",
+        duration: 3000,
+        destination: "",
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #00b09b, #96c93d)",
+        },
+        offset: {
+            x: 1, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: 100 // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  });
+
 
 
 

@@ -179,13 +179,16 @@ nav {
   background-color: var(--dark-color-logo);
   position: fixed;
   top: 50px;
-  height: 100vh;
-  /* padding: 24px; */
+  height: calc(100vh - 68px);
+  /* padding: 20px; */
   left: 0;
-  width: calc(100% - 24px);
-  padding-left: 24px;
+  width: 100%;
   transform: translateX(-100%); /* Lo mueve fuera de la pantalla a la izquierda */
-  transition: transform 0.5s ease; /* Suaviza la transición */
+  transition: transform 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 12;
 }
 
 /* Clase para cuando el menú está activo */
@@ -196,9 +199,85 @@ nav {
   text-decoration: none;
   color: var(--black);
   font-weight: bold;
+  font-size: xx-large;
   /* margin-bottom: 24px; */
 }
-.mobile-menu ul {
+
+.navigation-items {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+}
+
+.menu-item {
+  width: 100%; /* Ocupa el ancho completo de navigation-items */
+  display: flex;
+  justify-content: flex-start; /* Alinea el contenido al inicio (izquierda) */
+  align-items: center; /* Centra verticalmente el texto con respecto al ícono */
+  padding: 10px; /* Ajuste según necesites */
+}
+
+.menu-item.email-row{
+  justify-content: space-between;
+}
+
+.menu-item.email-row span{
+  margin-left: 40px;
+}
+
+
+
+.static-info {
+  text-align: center; /* Centra el texto si solo es texto */
+  padding: 12px 24px; /* Ajusta según necesites */
+  /* background-color: red; */
+  border-top: 1px solid;
+  margin-left: 10px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.static-info .menu-item{
+  padding: 0;
+}
+
+.mobile-menu .icon {
+  width: 30px; /* Controla el tamaño del ícono */
+  height: 30px;
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.mobile-menu a {
+  align-items: center;
+  text-decoration: none;
+  color: var(--black); /* Asegúrate de tener esta variable definida o usa un color directo */
+  font-weight: bold;
+  width: 100%; /* Asegura que el enlace ocupe todo el ancho para un mejor área de clic */
+}
+
+.title-contact{
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+/* Estilos para hacer que el ícono parezca más un botón */
+.icon-button {
+  padding: 5px; /* Espaciado interno */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 12px;
+}
+
+
+
+
+
+
+/* .mobile-menu ul {
   padding: 0;
   margin: 24px 0 0;
   list-style: none;
@@ -216,7 +295,7 @@ nav {
 .sign-out {
   font-size: var(--sm);
   color: var(--hospital-green) !important;
-}
+} */
 
 @media (max-width: 640px) {
   .menu {

@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" href="./logos/logo-letra.svg" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./styles.css" />
     <title>Jesús P. Navarrete</title>
   </head>
@@ -57,39 +58,41 @@
       </div>
 
       <div class="mobile-menu">
-        <ul>
-          <li>
-            <a href="/">ABOUT ME</a>
-          </li>
-          <li>
-            <a href="/">MY PROJECTS</a>
-          </li>
-          <li>
-            <a href="/">SOCIAL</a>
-          </li>
-        </ul>
+        <div class="navigation-items">
+          <div class="menu-item">
+            <a href="#">
+              <img src="icons/user.svg" alt="User" class="icon">
+              About Me
+            </a> 
+          </div>
+          <div class="menu-item">
+            <a href="#">
+              <img src="icons/portfolio.svg" alt="Projects" class="icon">
+              My Projects
+            </a>
+          </div>
+          <div class="menu-item">
+            <a href="#">
+              <img src="icons/social.svg" alt="Social" class="icon">
+              Social
+            </a>
+          </div>
+        </div>
 
-        <ul>
-          <p>Contact</p>
-          <li>
-            <a href="/" class="title">je.parra.navarrete@gmail.com</a>
-          </li>
-
-          <li>
-            <a href="/">yisus_dev76</a>
-          </li>
-        </ul>
-        
-
-        <ul>
-          <!-- <li>
-            <a href="/" class="email">platzi@example.com</a>
-          </li> -->
-          <li>
-            <a href="/" class="sign-out">My whatsap</a>
-          </li>
-        </ul>
+        <div class="static-info">
+          <div class="menu-item">
+            <img src="icons/contact.svg" alt="Contact" class="icon">
+          <span class="title-contact">Contact</span>
+          </div>
+          <div class="menu-item email-row">
+            <span>chuchin1770@gmail.com</span>
+            <div class="icon-button">
+              <img src="icons/copy.svg" alt="Copy" class="icon">
+            </div>
+          </div>
+        </div>
       </div>
+
     </nav>
 
       <main class="main-container">
@@ -154,6 +157,7 @@
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit repellat, enim blanditiis id quidem ex accusantium nulla, ratione quibusdam harum culpa nesciunt molestias deleniti perspiciatis, praesentium iusto sed autem vero.</p>
     </section>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
