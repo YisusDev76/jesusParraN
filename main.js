@@ -1,6 +1,7 @@
 const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
 const burguerMenu = document.querySelector('.menu');
+const closeIconMenu = document.querySelector('.close-icon');
 const mobileMenu = document.querySelector('.mobile-menu');
 const cardsContainer = document.querySelector('.cards-container');
 // selecionamos nuestro main container. 
@@ -8,6 +9,7 @@ const mainContainer = document.querySelector(".main-container");
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burguerMenu.addEventListener('click', toggleMobileMenu);
+closeIconMenu.addEventListener('click', toggleMobileMenu);
 
 let options = {
     strings: ["Web Development", "Full-Stack Developer", "Gamer"],
@@ -30,8 +32,13 @@ function toggleDesktopMenu() {
 }
 
 function toggleMobileMenu() {
-    // mobileMenu.classList.toggle('inactive');
+  console.log("xd");
     mobileMenu.classList.toggle('active'); // Cambia 'inactive' a 'active'
+    
+    closeIconMenu.classList.toggle('inactive');
+    // burguerMenu.classList.toggle('inactive');
+
+    burguerMenu.style.display === 'none' ? burguerMenu.style.display = 'block' : burguerMenu.style.display = 'none';
 }
 
 function toogleCarritoAside() {
