@@ -4,12 +4,22 @@ const burguerMenu = document.querySelector('.menu');
 const closeIconMenu = document.querySelector('.close-icon');
 const mobileMenu = document.querySelector('.mobile-menu');
 const cardsContainer = document.querySelector('.cards-container');
+const copyEmailIcon = document.querySelector('#copyEmailIcon');
+const emailIcon = document.getElementById('emailIcon');
+const projectLinks = document.querySelectorAll('a[href="#myProjects"]');
+
+
+const user = 'je.parra.navarrete';
+const domain = 'gmail.com';
+
 // selecionamos nuestro main container. 
 const mainContainer = document.querySelector(".main-container");
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burguerMenu.addEventListener('click', toggleMobileMenu);
 closeIconMenu.addEventListener('click', toggleMobileMenu);
+copyEmailIcon.addEventListener('click', copyEmailOnClipBoard);
+emailIcon.addEventListener('click', copyEmailOnClipBoard);
 
 let options = {
     strings: ["Web Development", "Full-Stack Developer", "Gamer"],
@@ -25,35 +35,57 @@ let options = {
   };
   
 let typed = new Typed('#typed', options);
+
+projectLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); // Previene el desplazamiento predeterminado
+
+    // Verifica si el menú móvil está activo
+    const isMobileMenuActive = document.querySelector('.mobile-menu.active') !== null;
+
+    if (isMobileMenuActive) {
+      // Si es el menú móvil, ciérralo
+      toggleMobileMenu();
+      setTimeout(() => {
+        smoothScrollTo('#myProjects', 500); // Ajusta '500' para cambiar la velocidad de desplazamiento
+      }, 300); // Ajusta este tiempo si es necesario, según la duración de la animación del menú
+    } else {
+      // Si no, haz scroll inmediatamente (para desktop)
+      smoothScrollTo('#myProjects', 500);
+    }
+  });
+});
+
   
 
 function toggleDesktopMenu() {
     desktopMenu.classList.toggle('inactive');
+
+    const emailLinkDesktop = document.querySelector('#emailLinkDesktop');
+    emailLinkDesktop.href = 'mailto:' + user+ '@'+ domain;
+    if (!desktopMenu.classList.contains('inactive')) {
+      
+      if (emailIcon) { // Verifica si emailIcon realmente existe para evitar errores
+          var emailContainer = document.querySelector('.email-container');
+          emailContainer.addEventListener('mouseenter', function() {
+              emailIcon.src = 'icons/sendEmail_hover.svg'; // Ruta al ícono que quieres mostrar al pasar el mouse
+          });
+
+          emailContainer.addEventListener('mouseleave', function() {
+              emailIcon.src = 'icons/sendEmail.svg'; // Ruta al ícono original
+          });
+      }
+  }
 }
 
 function toggleMobileMenu() {
-  console.log("xd");
     mobileMenu.classList.toggle('active'); // Cambia 'inactive' a 'active'
-    
     closeIconMenu.classList.toggle('inactive');
-    // burguerMenu.classList.toggle('inactive');
-
     burguerMenu.style.display === 'none' ? burguerMenu.style.display = 'block' : burguerMenu.style.display = 'none';
-}
 
-function toogleCarritoAside() {
-    const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
-    if (!isMobileMenuClosed) {
-        mobileMenu.classList.add('inactive');
-    }
-
-    shoppingCartContainer.classList.toggle('inactive');
-
-    const isProductDetailClosed = productDetailContainer.classList.contains('inactive');
-    if (!isProductDetailClosed) {
-        productDetailContainer.classList.add('inactive');
-    }
-
+    const emailLinkMobile = document.getElementById('emailLinkMobile');
+    emailLinkMobile.textContent = user +'@'+domain;
+    emailLinkMobile.href = 'mailto:' + user+ '@'+ domain;
 }
 
 function openProductDetailAside() {
@@ -63,34 +95,59 @@ function openProductDetailAside() {
     desktopMenu.classList.add('inactive');
 }
 
-document.querySelector('.icon-button').addEventListener('click', function() {
-    const email = 'chuchin1770@gmail.com'; // Asegúrate de usar el método adecuado para obtener este valor si cambia dinámicamente
-    navigator.clipboard.writeText(email).then(function() {
-    //   alert('Email copied to clipboard!');
-    console.log("entra al toastify");
-      Toastify({
-        text: "Email copiado en el portapapeles!!",
-        duration: 3000,
-        destination: "",
-        newWindow: true,
-        close: true,
-        gravity: "bottom", // `top` or `bottom`
-        position: "center", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
+function copyEmailOnClipBoard() {
+  console.log("Copy on clipboard");
+  const email = user+'@'+domain; // Asegúrate de usar el método adecuado para obtener este valor si cambia dinámicamente
+  navigator.clipboard.writeText(email).then(function() {
+    Toastify({
+      text: "Email copiado en el portapapeles!!",
+      duration: 3000,
+      destination: "",
+      newWindow: true,
+      close: true,
+      gravity: "bottom", // `top` or `bottom`
+      position: "center", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+      offset: {
+          x: 1, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+          y: 100 // vertical axis - can be a number or a string indicating unity. eg: '2em'
         },
-        offset: {
-            x: 1, // horizontal axis - can be a number or a string indicating unity. eg: '2em'
-            y: 100 // vertical axis - can be a number or a string indicating unity. eg: '2em'
-          },
-        onClick: function(){} // Callback after click
-      }).showToast();
-    }, function(err) {
-      console.error('Could not copy text: ', err);
-    });
+      onClick: function(){} // Callback after click
+    }).showToast();
+  }, function(err) {
+    console.error('Could not copy text: ', err);
   });
+}
 
+// Función para animar el desplazamiento
+function smoothScrollTo(target, duration) {
+  var targetElement = document.querySelector(target);
+  if (!targetElement) return;
+
+  var targetPosition = targetElement.getBoundingClientRect().top; // Posición del objetivo
+  var startPosition = window.pageYOffset; // Posición de inicio (actual)
+  var startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    var timeElapsed = currentTime - startTime;
+    var run = ease(timeElapsed, startPosition, targetPosition, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animation);
+  }
+
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t + b;
+    t--;
+    return -c / 2 * (t * (t - 2) - 1) + b;
+  }
+
+  requestAnimationFrame(animation);
+}
 
 
 

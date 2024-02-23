@@ -5,7 +5,7 @@
   --very-light-pink: #c7c7c7;
   --text-input-field: #f7f7f7;
   --hospital-green: #acd9b2;
-  --dark-color-logo:#ac9b7f;
+  --dark-color-logo: #ac9b7f;
   --primary: #1f1f1f;
   --secondary: #292d3e;
   --tertiary: rgba(86, 88, 109, 0.9);
@@ -64,7 +64,7 @@ nav {
   margin-left: 24px;
 }
 
-img.close-icon{
+img.close-icon {
   width: 28px;
   margin-left: 24px;
   /* display: none; */
@@ -145,15 +145,49 @@ img.close-icon{
   position: absolute;
   top: 60px;
   right: 60px;
-  background: var(--white);
+  background: var(--text-input-field);
+  opacity: 0.8;
   width: 250px;
   height: auto;
   border: 1px solid var(--very-light-pink);
   border-radius: 6px;
   padding: 20px 20px 0 20px;
+  /* display: flex; */
+  flex-direction: column;
 }
 
-.desktop-menu ul {
+.desktop-menu:hover {
+  opacity: 1;
+}
+
+.email-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.email-container a  {
+  text-decoration: none;
+  color: #000000;
+  font-style: italic;
+  font-size: large
+}
+
+.email-container :hover  {
+  text-decoration: underline;
+}
+
+.icon-button {
+  display: flex;
+  align-items: center;
+}
+.icon-button:hover {
+  cursor: pointer;
+}
+.icon-button img {
+  width: 40px;
+}
+
+/* .desktop-menu ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -178,7 +212,7 @@ img.close-icon{
   text-decoration: none;
   margin-bottom: 20px;
   display: inline-block;
-}
+} */
 
 /* Menu en mobile */
 .mobile-menu {
@@ -227,11 +261,11 @@ img.close-icon{
   padding: 10px; /* Ajuste según necesites */
 }
 
-.menu-item.email-row{
+.menu-item.email-row {
   justify-content: space-between;
 }
 
-.menu-item.email-row span{
+.menu-item.email-row span {
   margin-left: 40px;
 }
 
@@ -244,7 +278,9 @@ img.close-icon{
 .mobile-menu a {
   align-items: center;
   text-decoration: none;
-  color: var(--black); /* Asegúrate de tener esta variable definida o usa un color directo */
+  color: var(
+    --black
+  ); /* Asegúrate de tener esta variable definida o usa un color directo */
   font-weight: bold;
   width: 100%; /* Asegura que el enlace ocupe todo el ancho para un mejor área de clic */
 }
@@ -259,7 +295,7 @@ img.close-icon{
   margin-bottom: 10px;
 }
 
-.static-info .menu-item{
+.static-info .menu-item {
   padding: 0;
 }
 
@@ -271,8 +307,7 @@ img.close-icon{
   width: 100%; /* Ocupa el ancho completo del contenedor padre */
 }
 
-
-.title-contact{
+.title-contact {
   font-size: x-large;
   font-weight: bolder;
 }
@@ -288,22 +323,22 @@ img.close-icon{
 
 /* MAIN SECTION */
 
-.main-container{
+.main-container {
   position: relative;
   background-color: transparent;
   height: 100vh;
   width: 100vw;
-
 }
 
-.main-container h1{
+.main-container h1 {
   font-size: 40px; /* Ajusta al tamaño que desees */
   color: var(--white);
-  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2), 9px 9px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2),
+    9px 9px 0px rgba(0, 0, 0, 0.2);
   margin-bottom: 0px;
 }
 
-.main-container h2{
+.main-container h2 {
   margin-bottom: 50px;
 }
 
@@ -324,7 +359,7 @@ img.close-icon{
 #content-wrap {
   position: absolute;
   top: 50%;
-  left: 50%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
   width: 75%;
@@ -363,9 +398,7 @@ img.close-icon{
   height: auto; /* Mantiene la proporción del SVG ajustando su altura automáticamente */
 }
 
-
-
-@media (max-width: 640px) {
+@media (max-width: 740px) {
   .menu {
     display: block;
   }
@@ -385,17 +418,16 @@ img.close-icon{
     display: none;
   }
 
-  body{
-    background-color:black;
+  body {
+    background-color: black;
   }
 
-  nav{
+  nav {
     padding: 0 0px;
   }
 
   .logo {
     margin-right: 30px;
-
   }
   .icon-circle {
     margin: 0 10px;
@@ -403,8 +435,7 @@ img.close-icon{
     height: 40px;
   }
 
-  .main-container h2{
+  .main-container h2 {
     margin-bottom: 25px;
   }
-
 }

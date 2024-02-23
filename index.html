@@ -33,7 +33,7 @@
             <a href="/">ABOUT ME</a>
           </li>
           <li>
-            <a href="/">MY PROJECTS</a>
+            <a href="#myProjects">MY PROJECTS</a>
           </li>
           <li>
             <a href="/">SOCIAL</a>
@@ -43,19 +43,12 @@
       </div>
 
       <div class="desktop-menu inactive">
-        <ul>
-          <li>
-            <a href="/" class="title">je.parra.navarrete@gmail.com</a>
-          </li>
-
-          <li>
-            <a href="/">yisus_dev76</a>
-          </li>
-
-          <li>
-            <a href="/">My whatsap</a>
-          </li>
-        </ul>
+        <div class="email-container">
+          <a href="javascript:void(0);" id="emailLinkDesktop">Envíame un correo</a>
+          <div class="icon-button">
+            <img src="icons/sendEmail.svg" alt="Copy" class="icon" id="emailIcon">
+          </div>
+        </div>
       </div>
 
       <div class="mobile-menu">
@@ -68,7 +61,7 @@
               </a> 
             </div>
             <div class="menu-item">
-              <a href="#">
+              <a href="#myProjects">
                 <img src="icons/portfolio.svg" alt="Projects" class="icon">
                 My Projects
               </a>
@@ -88,8 +81,8 @@
           <span class="title-contact">Contact</span>
           </div>
           <div class="menu-item email-row">
-            <span>chuchin1770@gmail.com</span>
-            <div class="icon-button">
+            <a href="javascript:void(0);" id="emailLinkMobile">loading email...</a>
+            <div class="icon-button" id="copyEmailIcon">
               <img src="icons/copy.svg" alt="Copy" class="icon">
             </div>
           </div>
@@ -141,7 +134,7 @@
               <a href="https://www.linkedin.com/in/yisusdev76/" class="icon-circle" target="_blank" rel="noopener noreferrer">
                 <img src="icons/linkedin.svg" alt="Descripción del ícono">
               </a>
-              <a href="tu-enlace" class="icon-circle" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/yisusDev76" class="icon-circle" target="_blank" rel="noopener noreferrer">
                 <img src="icons/github.svg" alt="Descripción del ícono">
               </a>
               <a href="tu-enlace" class="icon-circle" target="_blank" rel="noopener noreferrer">
@@ -151,14 +144,40 @@
           </section>
     </main>
 
+    <section id="myProjects" style="background-color: #ebe6e6; padding: 20px; text-align: center;">
+      <h2 style="color: #333;">Mis Proyectos</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+        
+        <!-- Proyecto 1 -->
+        <div style="width: 300px; background: #fff; border: 1px solid #ddd; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <img src="https://via.placeholder.com/280x160" alt="Proyecto 1" style="width: 100%; height: auto;">
+          <h3 style="color: #333;">Proyecto Uno</h3>
+          <p style="color: #666;">Este es un proyecto de ejemplo donde desarrollé una aplicación web con HTML, CSS y JavaScript.</p>
+          <p style="font-style: italic; color: #666;">Tecnologías: HTML, CSS, JS</p>
+          <p style="font-style: italic; color: #666;">Rol: Desarrollador Frontend</p>
+        </div>
+        
+        <!-- Proyecto 2 -->
+        <div style="width: 300px; background: #fff; border: 1px solid #ddd; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <img src="https://via.placeholder.com/280x160" alt="Proyecto 2" style="width: 100%; height: auto;">
+          <h3 style="color: #333;">Proyecto Dos</h3>
+          <p style="color: #666;">Este proyecto es un sistema de gestión desarrollado en PHP y MySQL.</p>
+          <p style="font-style: italic; color: #666;">Tecnologías: PHP, MySQL</p>
+          <p style="font-style: italic; color: #666;">Rol: Desarrollador Backend</p>
+        </div>
+        
+        <!-- Proyecto 3 -->
+        <div style="width: 300px; background: #fff; border: 1px solid #ddd; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+          <img src="https://via.placeholder.com/280x160" alt="Proyecto 3" style="width: 100%; height: auto;">
+          <h3 style="color: #333;">Proyecto Tres</h3>
+          <p style="color: #666;">En este proyecto colaboré en el diseño de una interfaz de usuario para una aplicación móvil.</p>
+          <p style="font-style: italic; color: #666;">Tecnologías: Sketch, Adobe XD</p>
+          <p style="font-style: italic; color: #666;">Rol: Diseñador UI/UX</p>
+        </div>
+        
+      </div>
     </section>
-    <section>
-      <h2>Prueba de seccion deberia de empezar a mostarse justo cuando empiece a hacer el scroll vertical</h2>
-      <img src="icons/icon_close.png" alt="" srcset="">
-      <br>
-      <input type="email" name="" id="">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit repellat, enim blanditiis id quidem ex accusantium nulla, ratione quibusdam harum culpa nesciunt molestias deleniti perspiciatis, praesentium iusto sed autem vero.</p>
-    </section>
+    
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./main.js"></script>
