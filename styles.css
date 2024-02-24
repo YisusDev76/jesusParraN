@@ -398,6 +398,75 @@ img.close-icon {
   height: auto; /* Mantiene la proporción del SVG ajustando su altura automáticamente */
 }
 
+/* SECTION: About me */
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background-color: #333; /* Elige tu color de fondo */
+  padding: 20px;
+  font-family: 'Arial', sans-serif; /* Elige tu tipografía */
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.profile img {
+  border-radius: 50%; /* Para hacer la imagen circular */
+  width: 350px; /* Ajusta según tu preferencia */
+  height: auto;
+  object-fit: cover; /* Para mantener la relación de aspecto */
+  margin-bottom: 20px;
+}
+
+.my-description{
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  margin-left: 50px;
+  border: white solid 1px;
+}
+
+.my-description p{
+  text-align: justify;
+}
+
+.skills {
+  margin-top: 20px;
+}
+
+.skill-set {
+  display: flex;
+  justify-content: center;
+}
+
+.skill {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill img {
+  width: 50px; /* Ajusta según tu preferencia */
+  height: 50px; /* Ajusta según tu preferencia */
+}
+
+
+
 @media (max-width: 740px) {
   .menu {
     display: block;
