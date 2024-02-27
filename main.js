@@ -6,9 +6,6 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const cardsContainer = document.querySelector('.cards-container');
 const copyEmailIcon = document.querySelector('#copyEmailIcon');
 const emailIcon = document.getElementById('emailIcon');
-const projectLinks = document.querySelectorAll('a[href="#myProjects"]');
-const aboutMeLinks = document.querySelectorAll('a[href="#aboutMe"]');
-
 
 const user = 'je.parra.navarrete';
 const domain = 'gmail.com';
@@ -41,36 +38,31 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
-      // Verifica si el menú móvil está activo
       const isMobileMenuActive = document.querySelector('.mobile-menu.active') !== null;
       const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
+      // Asume que tienes una clase para tu menú de navegación y puedes obtener su altura
+      const navHeight = document.querySelector('#navigationBar').offsetHeight;
 
-      if (isMobileMenuActive) {
-          // Si es el menú móvil, ciérralo
-          toggleMobileMenu();
-          // Espera a que el menú se cierre antes de desplazarte
-          setTimeout(() => {
-              if (targetElement) {
-                  window.scrollTo({
-                      top: targetElement.offsetTop,
-                      behavior: "smooth"
-                  });
-              }
-          }, 300); // Ajusta este tiempo si es necesario, según la duración de la animación del menú
-      } else {
-          // Si no es el menú móvil, realiza el desplazamiento inmediatamente
+      const scrollToPosition = () => {
           if (targetElement) {
+              const positionToScroll = targetElement.offsetTop - navHeight; // Ajusta aquí según sea necesario
               window.scrollTo({
-                  top: targetElement.offsetTop,
+                  top: positionToScroll,
                   behavior: "smooth"
               });
           }
+      };
+
+      if (isMobileMenuActive) {
+          toggleMobileMenu();
+          setTimeout(scrollToPosition, 300); // Ajusta este tiempo si es necesario
+      } else {
+          scrollToPosition();
       }
   });
 });
 
-    
 function toggleDesktopMenu() {
     desktopMenu.classList.toggle('inactive');
 
@@ -133,34 +125,6 @@ function copyEmailOnClipBoard() {
   }, function(err) {
     console.error('Could not copy text: ', err);
   });
-}
-
-// Función para animar el desplazamiento
-function smoothScrollTo(target, duration) {
-  console.log('Tarjet selector:', target);
-  var targetElement = document.querySelector(target);
-  if (!targetElement) return;
-
-  var targetPosition = targetElement.getBoundingClientRect().top; // Posición del objetivo
-  var startPosition = window.pageYOffset; // Posición de inicio (actual)
-  var startTime = null;
-
-  function animation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    var timeElapsed = currentTime - startTime;
-    var run = ease(timeElapsed, startPosition, targetPosition, duration);
-    window.scrollTo(0, run);
-    if (timeElapsed < duration) requestAnimationFrame(animation);
-  }
-
-  function ease(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return c / 2 * t * t + b;
-    t--;
-    return -c / 2 * (t * (t - 2) - 1) + b;
-  }
-
-  requestAnimationFrame(animation);
 }
 
 
