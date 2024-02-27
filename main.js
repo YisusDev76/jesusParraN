@@ -7,6 +7,7 @@ const cardsContainer = document.querySelector('.cards-container');
 const copyEmailIcon = document.querySelector('#copyEmailIcon');
 const emailIcon = document.getElementById('emailIcon');
 const projectLinks = document.querySelectorAll('a[href="#myProjects"]');
+const aboutMeLinks = document.querySelectorAll('a[href="#aboutMe"]');
 
 
 const user = 'je.parra.navarrete';
@@ -36,28 +37,40 @@ let options = {
   
 let typed = new Typed('#typed', options);
 
-projectLinks.forEach(link => {
-  link.addEventListener('click', function(event) {
-    event.preventDefault(); // Previene el desplazamiento predeterminado
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
 
-    // Verifica si el menú móvil está activo
-    const isMobileMenuActive = document.querySelector('.mobile-menu.active') !== null;
+      // Verifica si el menú móvil está activo
+      const isMobileMenuActive = document.querySelector('.mobile-menu.active') !== null;
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
 
-    if (isMobileMenuActive) {
-      // Si es el menú móvil, ciérralo
-      toggleMobileMenu();
-      setTimeout(() => {
-        smoothScrollTo('#myProjects', 500); // Ajusta '500' para cambiar la velocidad de desplazamiento
-      }, 300); // Ajusta este tiempo si es necesario, según la duración de la animación del menú
-    } else {
-      // Si no, haz scroll inmediatamente (para desktop)
-      smoothScrollTo('#myProjects', 500);
-    }
+      if (isMobileMenuActive) {
+          // Si es el menú móvil, ciérralo
+          toggleMobileMenu();
+          // Espera a que el menú se cierre antes de desplazarte
+          setTimeout(() => {
+              if (targetElement) {
+                  window.scrollTo({
+                      top: targetElement.offsetTop,
+                      behavior: "smooth"
+                  });
+              }
+          }, 300); // Ajusta este tiempo si es necesario, según la duración de la animación del menú
+      } else {
+          // Si no es el menú móvil, realiza el desplazamiento inmediatamente
+          if (targetElement) {
+              window.scrollTo({
+                  top: targetElement.offsetTop,
+                  behavior: "smooth"
+              });
+          }
+      }
   });
 });
 
-  
-
+    
 function toggleDesktopMenu() {
     desktopMenu.classList.toggle('inactive');
 
@@ -124,6 +137,7 @@ function copyEmailOnClipBoard() {
 
 // Función para animar el desplazamiento
 function smoothScrollTo(target, duration) {
+  console.log('Tarjet selector:', target);
   var targetElement = document.querySelector(target);
   if (!targetElement) return;
 
