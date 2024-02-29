@@ -15,6 +15,10 @@
     <link rel="shortcut icon" href="./logos/logo-letra.svg" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>Jesús P. Navarrete</title>
   </head>
   <body>
@@ -163,15 +167,18 @@
         
       </div>
       <div class="skills">
-        <h2>My Skills</h2>
-        <p>I value the requirements of each job I do, and I enjoy learning by doing...</p>
-        <div class="skill-set">
-          <!-- Cada icono de habilidad será un div -->
-          <div class="skill">
-            <img src="ruta-al-icono-js.png" alt="JavaScript">
-            <p>JS</p>
+        <div class="title-skills">
+          <img src="icons/computer-icon.svg" alt="Projects" class="logo">
+          <h2>
+            My Skills
+          </h2>
+        </div>
+        <p class="eslogan-skills">Explorando tecnologías para 'codificar' el futuro. Descubre mis habilidades clave.</p>
+        <!-- Slider main container -->
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
           </div>
-          <!-- Repite para cada habilidad -->
+          <div class="swiper-pagination"></div>
         </div>
       </div>
     </section>
@@ -209,7 +216,7 @@
         
       </div>
     </section>
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./main.js"></script>
