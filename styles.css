@@ -555,6 +555,10 @@ img.close-icon {
     margin: 10px 0px 10px 0px;
   }
 
+  .skills {
+    margin-top: 30px;
+  }
+
   .title-skills .logo {
     width: 25px;
     padding-right: 0px;
