@@ -6,12 +6,10 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const cardsContainer = document.querySelector('.cards-container');
 const copyEmailIcon = document.querySelector('#copyEmailIcon');
 const emailIcon = document.getElementById('emailIcon');
+const mainContainer = document.querySelector(".main-container");
 
 const user = 'je.parra.navarrete';
 const domain = 'gmail.com';
-
-// selecionamos nuestro main container. 
-const mainContainer = document.querySelector(".main-container");
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burguerMenu.addEventListener('click', toggleMobileMenu);
