@@ -15,6 +15,10 @@
     <link rel="shortcut icon" href="./logos/logo-letra.svg" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <title>Jesús P. Navarrete</title>
   </head>
   <body>
@@ -160,18 +164,38 @@
              atención y quizás lo estudie más formalmente en el futuro. Te invito a conectarte conmigo a través de las <a href="">redes sociales</a> para explorar cómo podemos colaborar en tu próximo proyecto o simplemente para intercambiar ideas.
           </p>
         </div>
-        
       </div>
+
       <div class="skills">
-        <h2>My Skills</h2>
-        <p>I value the requirements of each job I do, and I enjoy learning by doing...</p>
-        <div class="skill-set">
-          <!-- Cada icono de habilidad será un div -->
-          <div class="skill">
-            <img src="ruta-al-icono-js.png" alt="JavaScript">
-            <p>JS</p>
+        <div class="title-skills">
+          <img src="icons/computer-icon.svg" alt="Projects" class="logo">
+          <h2>
+            My Skills
+          </h2>
+        </div>
+        
+        <p class="eslogan-skills">Explorando tecnologías para codificar el <strong>futuro.</strong> Descubre mis habilidades clave.</p>
+
+        <div class="swiper mySwiper">
+
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/html-icon.svg" alt="HTML 5" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/css3-icon.svg" alt="CSS 3" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/js-icon.svg" alt="JavaScript" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/laravel-icon.svg" alt="Laravel" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/mysql.svg" alt="Mysql" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/ionic-icon.svg" alt="Ionic Framework" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/git-icon.svg" alt="Git" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/github.svg" alt="GitHub" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/linux-icon.svg" alt="Linux" class="icon"></div></div>
+            <div class="swiper-slide"><div class="skill-bg-icon"><img src="icons/notion-icon.svg" alt="Notion" class="icon"></div></div>               
           </div>
-          <!-- Repite para cada habilidad -->
+
+          <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </div>
     </section>
@@ -209,7 +233,7 @@
         
       </div>
     </section>
-    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./main.js"></script>

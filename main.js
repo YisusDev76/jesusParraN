@@ -34,6 +34,32 @@ let options = {
   
 let typed = new Typed('#typed', options);
 
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 4,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+   breakpoints: {
+    // Cuando el ancho de la ventana es >= 320px (un ejemplo para móviles)
+    320: {
+      slidesPerView: 3,
+      spaceBetween: 4
+    },
+    768: { // Este valor es común para tablets o pantallas pequeñas de escritorio
+      slidesPerView: 4,
+      spaceBetween: 30 // Vuelve al espacio original entre diapositivas
+    }
+    // Puedes añadir más breakpoints aquí si necesitas ajustes adicionales para otras dimensiones
+  }
+});
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
       e.preventDefault();

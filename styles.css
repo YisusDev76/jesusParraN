@@ -410,6 +410,10 @@ img.close-icon {
   padding: 20px;
 }
 
+.about-me h2 {
+  font-size: xx-large;
+}
+
 .profile {
   display: flex;
   flex-direction: row;
@@ -462,21 +466,50 @@ img.close-icon {
   margin-top: 20px;
 }
 
-.skill-set {
+.title-skills{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+}
+
+.eslogan-skills{
+  font-size: x-large;
+}
+
+.swiper {
+  width: 75vw;
+  height: auto;
+}
+
+.swiper-slide {
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  /* background: var(--primary); */
+  background: transparent;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.swiper-slide img {
+  width: 80%;
+  height: min-content;
+  height: auto;
+}
+
+.skill-bg-icon{
+  width: 100px;
+  height: 100px;
+  border-radius: 50% 50%;
+  padding: 10px;
+  background: white;
   display: flex;
   justify-content: center;
-}
-
-.skill {
-  margin: 10px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.skill img {
-  width: 50px; /* Ajusta según tu preferencia */
-  height: 50px; /* Ajusta según tu preferencia */
 }
 
 @media (max-width: 740px) {
@@ -540,4 +573,40 @@ img.close-icon {
     font-size: var(--md);
     margin: 10px 0px 10px 0px;
   }
+
+  .about-me h2 {
+    font-size: x-large;
+  }
+
+  .title-skills .logo {
+    width: 25px;
+    padding-right: 0px;
+    margin-right: 4px;
+  }
+
+  .swiper {
+    width: 95vw;
+    height: auto;
+  }
+
+  .skill-bg-icon{
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+
+  .eslogan-skills{
+    font-size: larger;
+    padding: 20px 10px 20px 10px;
+    margin-top: 0px;
+  }
+
+
+
+
+
 }
