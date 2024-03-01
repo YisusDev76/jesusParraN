@@ -28,18 +28,18 @@ body {
 
 /* Estiliza la barra de desplazamiento completa */
 ::-webkit-scrollbar {
-  width: 12px; /* o el ancho que prefieras */
+  width: 12px;
 }
 
 /* Estiliza la pista (el espacio detrás de la barra de desplazamiento) */
 ::-webkit-scrollbar-track {
-  background: #252525; /* o el color de fondo que prefieras */
+  background: #252525;
   border-radius: 20px;
 }
 
 /* Estiliza el botón de desplazamiento (la barra de desplazamiento en sí) */
 ::-webkit-scrollbar-thumb {
-  background: #888; /* o el color que prefieras */
+  background: #888;
   border-radius: 10px;
 }
 
@@ -68,7 +68,6 @@ nav {
 img.close-icon {
   width: 28px;
   margin-left: 24px;
-  /* display: none; */
 }
 
 .logo {
@@ -187,33 +186,6 @@ img.close-icon {
 .icon-button img {
   width: 40px;
 }
-
-/* .desktop-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.desktop-menu ul li {
-  text-align: end;
-}
-.desktop-menu ul li:nth-child(1),
-.desktop-menu ul li:nth-child(2) {
-  font-weight: bold;
-}
-.desktop-menu ul li:last-child {
-  padding-top: 20px;
-  border-top: 1px solid var(--very-light-pink);
-}
-.desktop-menu ul li:last-child a {
-  color: var(--hospital-green);
-  font-size: var(--sm);
-}
-.desktop-menu ul li a {
-  color: var(--back);
-  text-decoration: none;
-  margin-bottom: 20px;
-  display: inline-block;
-} */
 
 /* Menu en mobile */
 .mobile-menu {
