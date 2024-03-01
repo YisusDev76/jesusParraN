@@ -117,7 +117,7 @@ img.close-icon {
   font-size: var(--sm);
   margin-right: 44px;
 }
-/* SUGERENCIA DE CODIGO, PARA QUE EL TEXTO CAMBIE DE COLOR */
+
 .navbar-email:hover {
   color: var(--hospital-green);
 }
@@ -192,11 +192,10 @@ img.close-icon {
   background-color: var(--dark-color-logo);
   position: fixed;
   top: 50px;
-  height: calc(100vh - 68px);
-  /* padding: 20px; */
+  height: calc(90vh - 68px);
   left: 0;
   width: 100%;
-  transform: translateX(-100%); /* Lo mueve fuera de la pantalla a la izquierda */
+  transform: translateX(-100%);
   transition: transform 0.5s ease;
   display: flex;
   flex-direction: column;
@@ -261,7 +260,6 @@ img.close-icon {
 .static-info {
   text-align: center; /* Centra el texto si solo es texto */
   padding: 12px 24px; /* Ajusta según necesites */
-  /* background-color: red; */
   border-top: 1px solid;
   margin-left: 10px;
   margin-right: 20px;
@@ -378,8 +376,9 @@ img.close-icon {
   align-items: center;
   text-align: center;
   color: white;
-  background-color: #333; /* Elige tu color de fondo */
+  background-color: #333;
   padding: 20px;
+  padding-bottom: 4%;
 }
 
 .about-me h2 {
@@ -484,6 +483,7 @@ img.close-icon {
   align-items: center;
 }
 
+/* Mobile */
 @media (max-width: 740px) {
   .menu {
     display: block;
@@ -521,6 +521,15 @@ img.close-icon {
     margin-bottom: 25px;
   }
 
+  /* About me  */
+  .about-me {
+    padding-bottom: 8%;
+  }
+
+  .about-me h2 {
+    font-size: x-large;
+  }
+
   .profile {
     display: flex;
     flex-direction: column;
@@ -544,10 +553,6 @@ img.close-icon {
     line-height: 1.3;
     font-size: var(--md);
     margin: 10px 0px 10px 0px;
-  }
-
-  .about-me h2 {
-    font-size: x-large;
   }
 
   .title-skills .logo {
@@ -576,9 +581,5 @@ img.close-icon {
     padding: 20px 10px 20px 10px;
     margin-top: 0px;
   }
-
-
-
-
 
 }
