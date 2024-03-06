@@ -91,10 +91,10 @@ img.close-icon {
 
 .navbar-left a {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  height: 100%; /* Asegúrate de definir un alto */
-  width: 100%; /* Y un ancho para el elemento <a>, si es necesario */
+  justify-content: center; 
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .navbar-left ul {
