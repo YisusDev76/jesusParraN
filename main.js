@@ -110,7 +110,7 @@ function toggleDesktopMenu() {
           });
 
           emailContainer.addEventListener('mouseleave', function() {
-              emailIcon.src = 'icons/sendEmail.svg'; // Ruta al ícono original
+              emailIcon.src = 'icons/sendEmail.svg';
           });
       }
   }
@@ -118,7 +118,7 @@ function toggleDesktopMenu() {
 
 function toggleMobileMenu() {
     console.log("esto esta funcionando en mobile");
-    mobileMenu.classList.toggle('active'); // Cambia 'inactive' a 'active'
+    mobileMenu.classList.toggle('active');
     closeIconMenu.classList.toggle('inactive');
     burguerMenu.style.display === 'none' ? burguerMenu.style.display = 'block' : burguerMenu.style.display = 'none';
 
@@ -192,7 +192,6 @@ window.addEventListener('load', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Agrega un evento click a cada imagen de proyecto
   projectImages.forEach(image => {
     image.addEventListener('click', function() {
       modal.style.display = "block";
@@ -200,7 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Cierra el modal al hacer clic en el botón de cierre
   closeButton.addEventListener('click', function() {
     modal.style.display = "none";
   });
