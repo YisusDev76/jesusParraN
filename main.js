@@ -12,8 +12,9 @@ const mainContainer = document.querySelector(".main-container");
 const projectImages = document.querySelectorAll('.image-project img');
 // Referencia al contenedor del modal
 const modal = document.getElementById('modal-container');
-// Referencia a la imagen dentro del modal
+const modalImageFlex = document.querySelector('.modal-content');
 const modalImage = document.getElementById('modal-image');
+const closeButton = document.querySelector('.close-btn'); 
 
 const user = 'je.parra.navarrete';
 const domain = 'gmail.com';
@@ -199,7 +200,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Evento para cerrar el modal al hacer clic fuera
+  // Cierra el modal al hacer clic en el botón de cierre
+  closeButton.addEventListener('click', function() {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', function(e) {
+    if (e.target == modalImageFlex) {
+      modal.style.display = "none";
+    }
+  });
+
   window.addEventListener('click', function(e) {
     if (e.target == modal) {
       modal.style.display = "none";
