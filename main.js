@@ -8,11 +8,20 @@ const copyEmailIcon = document.querySelector('#copyEmailIcon');
 const emailIcon = document.getElementById('emailIcon');
 const mainContainer = document.querySelector(".main-container");
 
+// Selecciona todas las imágenes de los proyectos
+const projectImages = document.querySelectorAll('.image-project img');
+// Referencia al contenedor del modal
+const modal = document.getElementById('modal-container');
+const modalImageFlex = document.querySelector('.modal-content');
+const modalImage = document.getElementById('modal-image');
+const closeButton = document.querySelector('.close-btn'); 
+
 const user = 'je.parra.navarrete';
 const domain = 'gmail.com';
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burguerMenu.addEventListener('click', toggleMobileMenu);
+burguerMenu.addEventListener('onTouchStart', toggleMobileMenu);
 closeIconMenu.addEventListener('click', toggleMobileMenu);
 copyEmailIcon.addEventListener('click', copyEmailOnClipBoard);
 emailIcon.addEventListener('click', copyEmailOnClipBoard);
@@ -108,6 +117,7 @@ function toggleDesktopMenu() {
 }
 
 function toggleMobileMenu() {
+    console.log("esto esta funcionando en mobile");
     mobileMenu.classList.toggle('active'); // Cambia 'inactive' a 'active'
     closeIconMenu.classList.toggle('inactive');
     burguerMenu.style.display === 'none' ? burguerMenu.style.display = 'block' : burguerMenu.style.display = 'none';
@@ -150,6 +160,64 @@ function copyEmailOnClipBoard() {
     console.error('Could not copy text: ', err);
   });
 }
+
+window.addEventListener('load', function() {
+  // Selecciona todas las imágenes dentro de .image-project
+  const images = document.querySelectorAll('.image-project img');
+
+  images.forEach(img => {
+    // Espera a que cada imagen se cargue para obtener sus dimensiones
+    if (img.complete) {
+      resizeContainer(img);
+    } else {
+      img.onload = () => {
+        resizeContainer(img);
+      };
+    }
+  });
+
+  function resizeContainer(img) {
+    // Obtén el contenedor .image-project de la imagen
+    const container = img.parentElement;
+    
+    // Determina si la imagen es horizontal o vertical
+    if (img.naturalWidth > img.naturalHeight) {
+      // Imagen horizontal
+      container.style.width = '334px'; // Ajusta según necesites
+    } else {
+      // Imagen vertical
+      container.style.width = '178px'; // Ajusta según necesites
+    }
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Agrega un evento click a cada imagen de proyecto
+  projectImages.forEach(image => {
+    image.addEventListener('click', function() {
+      modal.style.display = "block";
+      modalImage.src = this.src; // Establece la imagen clickeada como la fuente del modal
+    });
+  });
+
+  // Cierra el modal al hacer clic en el botón de cierre
+  closeButton.addEventListener('click', function() {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', function(e) {
+    if (e.target == modalImageFlex) {
+      modal.style.display = "none";
+    }
+  });
+
+  window.addEventListener('click', function(e) {
+    if (e.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
 
 
 

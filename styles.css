@@ -50,15 +50,17 @@ body {
 
 /* NAvbar (general) */
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
   background-color: var(--secondary);
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 4;
 }
 .menu {
   display: none;
@@ -200,7 +202,7 @@ img.close-icon {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 12;
+  z-index: 1;
 }
 
 /* Clase para cuando el menú está activo */
@@ -285,7 +287,7 @@ img.close-icon {
 
 /* Estilos para hacer que el ícono parezca más un botón */
 .icon-button {
-  padding: 5px; /* Espaciado interno */
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -293,12 +295,14 @@ img.close-icon {
 }
 
 /* MAIN SECTION */
-
 .main-container {
-  position: relative;
   background-color: transparent;
-  height: 100vh;
+  height: calc(100vh - 68px);
   width: 100vw;
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-container h1 {
@@ -307,37 +311,32 @@ img.close-icon {
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2),
     9px 9px 0px rgba(0, 0, 0, 0.2);
   margin-bottom: 0px;
+  text-align: center;
 }
 
 .main-container h2 {
   margin-bottom: 50px;
 }
 
+#content-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #bg-wrap {
   position: absolute;
+  z-index: -1;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Asegura que el fondo esté detrás del contenido */
 }
 
 #bg-wrap svg {
   width: 100%;
   height: 100%;
-}
-
-#content-wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  width: 75%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .icons-container {
@@ -429,7 +428,7 @@ img.close-icon {
   color: var(--white);
 }
 
-.my-description a:hover{
+.my-description a:hover {
   color: var(--dark-color-logo);
 }
 
@@ -437,7 +436,7 @@ img.close-icon {
   margin-top: 20px;
 }
 
-.title-skills{
+.title-skills {
   width: 100%;
   display: flex;
   align-items: center;
@@ -445,7 +444,7 @@ img.close-icon {
   font-size: xx-large;
 }
 
-.eslogan-skills{
+.eslogan-skills {
   font-size: x-large;
 }
 
@@ -462,7 +461,6 @@ img.close-icon {
   display: flex !important;
   align-items: center;
   justify-content: center;
-
 }
 
 .swiper-slide img {
@@ -471,7 +469,7 @@ img.close-icon {
   height: auto;
 }
 
-.skill-bg-icon{
+.skill-bg-icon {
   width: 100px;
   height: 100px;
   border-radius: 50% 50%;
@@ -480,6 +478,155 @@ img.close-icon {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Projects */
+.projects-section {
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  padding-bottom: 4%;
+}
+
+.projects-section h2 {
+  font-size: xx-large;
+  text-align: center;
+}
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.image-project {
+  /* width: 157px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-project img {
+  transition: filter 0.5s ease; /* Suaviza la transición del filtro */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  opacity: 0.6;
+}
+
+.image-project img:hover {
+  opacity: 1;
+}
+
+.project img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.description-project {
+  font-size: large;
+}
+
+.info-project {
+  min-width: 668px;
+  margin-left: 20px;
+}
+
+.info-project h3 {
+  font-size: x-large;
+  margin-top: 0px;
+}
+
+.hashtag span {
+  font-weight: 500;
+}
+
+.date-projects {
+  color: #696868;
+  margin-bottom: 0px;
+}
+
+.links-to-project {
+  display: flex; /* Esto habilita flexbox para los elementos dentro de links-to-project */
+  flex-wrap: wrap; /* Esto permite que los elementos se ajusten en filas adicionales si no hay suficiente espacio */
+  margin-top: 10px;
+}
+
+.buttton-link {
+  display: flex; /* Esto habilita flexbox */
+  align-items: center;
+  justify-content: center; /* Esto centra los elementos horizontalmente */
+  gap: 10px; /* Esto añade un espacio entre el texto y el icono */
+  flex-direction: row;
+  background-color: var(--secondary);
+  color: var(--white);
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 15px;
+  transition: background-color 0.5s ease;
+  margin-right: 20px;
+}
+
+#more-projects-button{
+  width: 255px;
+}
+
+.links-to-project a:hover {
+  background-color: var(--dark-color-logo);
+}
+
+.external-link-icon {
+  width: 19px;
+  height: auto;
+}
+
+.modal-container {
+  display: none; /* Oculta el modal inicialmente */
+  position: fixed; /* Fija el modal sobre el contenido de la página */
+  z-index: 1; /* Asegura que el modal se muestre sobre otros elementos */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Permite desplazar dentro del modal si es necesario */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-opaco */
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Ajusta al 80% de la altura de la pantalla */
+  padding: 20px;
+  margin-top: 100px;
+  padding: 20px; /* Asegúrate de ajustar según tus necesidades */
+  box-sizing: border-box; /* Asegura que el padding no aumente el tamaño del contenedor */
+}
+.modal-content img {
+  max-width: 100%; /* Permite que la imagen sea hasta el 100% del ancho de su contenedor */
+  max-height: 100%; /* Permite que la imagen sea hasta el 100% de la altura del contenedor */
+  object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor sin distorsionarse */
+}
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 /* Mobile */
@@ -504,7 +651,9 @@ img.close-icon {
   }
 
   nav {
-    padding: 0 0px;
+    padding: 0px 0px 4px;
+    position: fixed;
+    /* position: relative; */
   }
 
   .logo {
@@ -569,7 +718,7 @@ img.close-icon {
     height: auto;
   }
 
-  .skill-bg-icon{
+  .skill-bg-icon {
     width: 40px;
     height: 40px;
     padding: 4px;
@@ -579,10 +728,34 @@ img.close-icon {
     display: none;
   }
 
-  .eslogan-skills{
+  .eslogan-skills {
     font-size: larger;
     padding: 20px 10px 20px 10px;
     margin-top: 0px;
   }
 
+  /* Projects */
+  .project {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-project {
+    min-width: auto;
+    margin-left: 5px;
+    padding: 15px;
+  }
+
+  .description-project{
+    font-size: medium;
+  }
+
+  .projects-section h2 {
+    font-size: x-large;
+    margin-bottom: 50px;
+  }
+
+  .info-project h3 {
+    font-size: large;
+  }
 }

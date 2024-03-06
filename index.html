@@ -97,6 +97,24 @@
     </nav>
 
       <main id="mainSection" class="main-container">
+        <section id="content-wrap">
+          <h1>Soy Jesús Parra Navarrete</h1>
+          <h2>
+            <span id="typed"></span>
+          </h2>
+
+          <div class="icons-container">
+            <a href="https://www.linkedin.com/in/yisusdev76/" class="icon-circle" target="_blank" rel="noopener noreferrer">
+              <img src="icons/linkedin.svg" alt="Perfil de LinkedIn de Jesús Parra Navarrete">
+            </a>
+            <a href="https://github.com/YisusDev76" class="icon-circle" target="_blank" rel="noopener noreferrer">
+              <img src="icons/github-icon.svg" alt="Perfil de GitHub de Jesús Parra Navarrete">
+            </a>
+            <a href="https://twitter.com/YisusDev76" class="icon-circle" target="_blank" rel="noopener noreferrer">
+              <img src="./icons/twitter.svg" alt="Perfil de Twitter de Jesús Parra Navarrete">
+            </a>
+          </div>                      
+        </section>
           <div id="bg-wrap">
             <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
             <defs>
@@ -114,24 +132,6 @@
             </rect>
             </svg>
           </div>
-          <section id="content-wrap">
-            <h1>Soy Jesús Parra Navarrete</h1>
-            <h2>
-              <span id="typed"></span>
-            </h2>
-
-            <div class="icons-container">
-              <a href="https://www.linkedin.com/in/yisusdev76/" class="icon-circle" target="_blank" rel="noopener noreferrer">
-                <img src="icons/linkedin.svg" alt="Perfil de LinkedIn de Jesús Parra Navarrete">
-              </a>
-              <a href="https://github.com/yisusDev76" class="icon-circle" target="_blank" rel="noopener noreferrer">
-                <img src="icons/github-icon.svg" alt="Perfil de GitHub de Jesús Parra Navarrete">
-              </a>
-              <a href="https://twitter.com/yisus_dev76" class="icon-circle" target="_blank" rel="noopener noreferrer">
-                <img src="./icons/twitter.svg" alt="Perfil de Twitter de Jesús Parra Navarrete">
-              </a>
-            </div>                      
-          </section>
     </main>
 
     <section id="aboutMe" class="about-me">
@@ -183,37 +183,110 @@
       </div>
     </section>
 
-    <section id="myProjects" style="background-color: #ebe6e6; padding: 20px; text-align: center;">
-      <h2 style="color: #333;">Mis Proyectos</h2>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-        
-        <!-- Proyecto 1 -->
-        <div style="width: 300px; background: #fff; border: 1px solid #ddd; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          <img src="https://via.placeholder.com/280x160" alt="Proyecto 1" style="width: 100%; height: auto;">
-          <h3 style="color: #333;">Proyecto Uno</h3>
-          <p style="color: #666;">Este es un proyecto de ejemplo donde desarrollé una aplicación web con HTML, CSS y JavaScript.</p>
-          <p style="font-style: italic; color: #666;">Tecnologías: HTML, CSS, JS</p>
-          <p style="font-style: italic; color: #666;">Rol: Desarrollador Frontend</p>
+    <section class="projects-section">
+      <h2>Algunos de mis proyectos</h2>
+      <div class="projects-container">
+        <div class="project">
+          <div class="image-project">
+            <img src="https://play-lh.googleusercontent.com/HjS5HD7mdocyy30ZjUNxClkhFfLUIZ_u9kzTmIsreM_UBG6176sdDWtJrKF9FCkovw=w2560-h1440-rw" alt="IMagen Primer Proyecto">
+          </div>
+          <div class="info-project">
+            <h3>Agromotriz Servicio</h3>
+            <hr>
+            <p class="description-project">Aplicación móvil de citas de servicio, mantenimiento y cotizaciones</p>
+            <p class="hashtag"><span>#Ionic</span> <span>#Angular</span> <span>#Capacitorjs</span> <span>#Laravel</span></p>
+            <p class="date-projects">Enero, 2023</p>
+            <div class="links-to-project">
+              <a href="#" class="buttton-link">View Demo
+                <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+              </a> 
+              <a href="#" class="buttton-link">View Source
+                <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+              </a>
+            </div>
+          </div>
         </div>
-        
-        <!-- Proyecto 2 -->
-        <div style="width: 300px; background: #fff; border: 1px solid #ddd; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          <img src="https://via.placeholder.com/280x160" alt="Proyecto 2" style="width: 100%; height: auto;">
-          <h3 style="color: #333;">Proyecto Dos</h3>
-          <p style="color: #666;">Este proyecto es un sistema de gestión desarrollado en PHP y MySQL.</p>
-          <p style="font-style: italic; color: #666;">Tecnologías: PHP, MySQL</p>
-          <p style="font-style: italic; color: #666;">Rol: Desarrollador Backend</p>
+      </div>
+
+      <div class="projects-container">
+        <div class="project">
+          <div class="image-project">
+            <img src="https://play-lh.googleusercontent.com/_3Axm4NSCZDJRF5eS6fL0OqEJ6_nocpjOPsjdix0Rf-Sd3h88s1-KptKGypQW5wvKP20=w2560-h1440-rw" alt="Imagen Segundo Proyecto">
+          </div>
+          <div class="info-project">
+            <h3>OverwatchPP - HeroPlanner</h3>
+            <hr>
+            <p class="description-project">Aplicación web del videojuego Overwatch para hacer un plan de equipo</p>
+            <p class="hashtag"><span>#React</span> <span>Hooks</span> <span>#Heroku</span> #auth0</p>
+            <p class="date-projects">Fecha estimada de Lanzamiento: Febrero, 2025</p>
+            <div class="links-to-project">
+              <a href="#" class="buttton-link">View Demo
+                <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+              </a> 
+              <a href="#" class="buttton-link">View Source
+                <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+              </a>
+            </div>
+          </div>
         </div>
-        
-        <!-- Proyecto 3 -->
-        <div style="width: 300px; background: #fff; border: 1px solid #ddd; padding: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-          <img src="https://via.placeholder.com/280x160" alt="Proyecto 3" style="width: 100%; height: auto;">
-          <h3 style="color: #333;">Proyecto Tres</h3>
-          <p style="color: #666;">En este proyecto colaboré en el diseño de una interfaz de usuario para una aplicación móvil.</p>
-          <p style="font-style: italic; color: #666;">Tecnologías: Sketch, Adobe XD</p>
-          <p style="font-style: italic; color: #666;">Rol: Diseñador UI/UX</p>
+      </div>
+
+      <div class="projects-container">
+        <div class="project">
+          <div class="image-project">
+            <img src="https://res.cloudinary.com/silviajcn/image/upload/v1643317095/Mi%20Portafolio/Proyects/p3_elvvzn.png" alt="Imagen Tercer Proyecto">
+          </div>
+          <div class="info-project">
+            <h3>MySeriesRank</h3>
+            <hr>
+            <p class="description-project">Aplicación web sobre las series que he visto</p>
+            <p class="hashtag"><span>#React</span> <span>#CSS</span> <span>#Heroku</span> <span>#bootstrap</span></p>
+            <p class="date-projects">Fecha estimada de Lanzamiento: Septiembre, 2024</p>
+            <div class="links-to-project">
+              <a href="#" class="buttton-link">View Demo
+                <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+              </a> 
+              <a href="#" class="buttton-link">View Source
+                <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+              </a>
+            </div>
+          </div>
         </div>
-        
+      </div>
+
+      <div class="projects-container">
+        <div class="project">
+          <div class="image-project">
+            <img src="https://res.cloudinary.com/silviajcn/image/upload/v1643317090/Mi%20Portafolio/Proyects/p1_lt87sz.png" alt="Primer Proyecto">
+          </div>
+          <div class="info-project">
+            <h3>JoshMusic Store</h3>
+            <hr>
+            <p class="description-project">Aplicación web de comercio electrónico</p>
+            <p class="hashtag"><span>#HTML</span> <span>#CSS</span> <span>#JavaScript</span></p>
+            <p class="date-projects">*Este es solo una demo del proyecto real*</p>
+            <p class="date-projects">Fecha estimada de Lanzamiento: Febrero, 2025</p>
+            <div class="links-to-project">
+              <a href="#" class="buttton-link">View Demo
+                <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+              </a> 
+              <a href="#" class="buttton-link">View Source
+                <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a id="more-projects-button" href="#" class="buttton-link">Más Proyectos
+        <img class="external-link-icon" src="icons/external-link.svg" alt="" srcset="">
+      </a>
+      <div id="modal-container" class="modal-container">
+        <div class="modal-content">
+          <!-- Botón de cierre -->
+          <span class="close-btn">&times;</span>
+          <img id="modal-image" src="" alt="Imagen ampliada">
+        </div>
       </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
