@@ -8,11 +8,19 @@ const copyEmailIcon = document.querySelector('#copyEmailIcon');
 const emailIcon = document.getElementById('emailIcon');
 const mainContainer = document.querySelector(".main-container");
 
+// Selecciona todas las imágenes de los proyectos
+const projectImages = document.querySelectorAll('.image-project img');
+// Referencia al contenedor del modal
+const modal = document.getElementById('modal-container');
+// Referencia a la imagen dentro del modal
+const modalImage = document.getElementById('modal-image');
+
 const user = 'je.parra.navarrete';
 const domain = 'gmail.com';
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
 burguerMenu.addEventListener('click', toggleMobileMenu);
+burguerMenu.addEventListener('onTouchStart', toggleMobileMenu);
 closeIconMenu.addEventListener('click', toggleMobileMenu);
 copyEmailIcon.addEventListener('click', copyEmailOnClipBoard);
 emailIcon.addEventListener('click', copyEmailOnClipBoard);
@@ -108,6 +116,7 @@ function toggleDesktopMenu() {
 }
 
 function toggleMobileMenu() {
+    console.log("esto esta funcionando en mobile");
     mobileMenu.classList.toggle('active'); // Cambia 'inactive' a 'active'
     closeIconMenu.classList.toggle('inactive');
     burguerMenu.style.display === 'none' ? burguerMenu.style.display = 'block' : burguerMenu.style.display = 'none';
@@ -180,6 +189,24 @@ window.addEventListener('load', function() {
     }
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Agrega un evento click a cada imagen de proyecto
+  projectImages.forEach(image => {
+    image.addEventListener('click', function() {
+      modal.style.display = "block";
+      modalImage.src = this.src; // Establece la imagen clickeada como la fuente del modal
+    });
+  });
+
+  // Evento para cerrar el modal al hacer clic fuera
+  window.addEventListener('click', function(e) {
+    if (e.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+});
+
 
 
 
