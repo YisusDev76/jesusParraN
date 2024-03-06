@@ -482,6 +482,102 @@ img.close-icon {
   align-items: center;
 }
 
+/* Projects */
+.projects-section{
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  padding-bottom: 4%;
+}
+
+.projects-section h2{
+  font-size: xx-large;
+  text-align: center;
+}
+.projects-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.project{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.image-project{
+  /* width: 157px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.project img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.description-project{
+  font-size: large;
+}
+
+.info-project{
+  min-width: 668px;
+  margin-left: 20px;
+}
+
+.info-project h3{
+  font-size: x-large;
+}
+
+.hashtag span{
+  font-weight: 500;
+}
+
+.date-projects{
+  color: #696868;
+  margin-bottom: 0px;
+}
+
+.links-to-project{
+  display: flex; /* Esto habilita flexbox para los elementos dentro de links-to-project */
+  flex-wrap: wrap; /* Esto permite que los elementos se ajusten en filas adicionales si no hay suficiente espacio */
+  margin-top: 10px;
+}
+
+.buttton-link {
+  display: flex; /* Esto habilita flexbox */
+  align-items: center;
+  justify-content: center; /* Esto centra los elementos horizontalmente */
+  gap: 10px; /* Esto añade un espacio entre el texto y el icono */
+  flex-direction: row;
+  background-color: var(--secondary);
+  color: var(--white);
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 15px;
+  transition: background-color 0.5s ease;
+  margin-right: 20px;
+}
+
+.links-to-project a:hover {
+  background-color: var(--dark-color-logo);
+}
+
+.external-link-icon{
+  width: 19px;
+  height: auto;
+}
+
+
 /* Mobile */
 @media (max-width: 740px) {
   .menu {
@@ -505,6 +601,7 @@ img.close-icon {
 
   nav {
     padding: 0 0px;
+    position: relative;
   }
 
   .logo {
@@ -583,6 +680,18 @@ img.close-icon {
     font-size: larger;
     padding: 20px 10px 20px 10px;
     margin-top: 0px;
+  }
+
+  /* Projects */
+  .project{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-project{
+    min-width: auto;
+    margin-left: 5px;
+    padding: 15px;
   }
 
 }

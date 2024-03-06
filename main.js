@@ -151,6 +151,36 @@ function copyEmailOnClipBoard() {
   });
 }
 
+window.addEventListener('load', function() {
+  // Selecciona todas las imágenes dentro de .image-project
+  const images = document.querySelectorAll('.image-project img');
+
+  images.forEach(img => {
+    // Espera a que cada imagen se cargue para obtener sus dimensiones
+    if (img.complete) {
+      resizeContainer(img);
+    } else {
+      img.onload = () => {
+        resizeContainer(img);
+      };
+    }
+  });
+
+  function resizeContainer(img) {
+    // Obtén el contenedor .image-project de la imagen
+    const container = img.parentElement;
+    
+    // Determina si la imagen es horizontal o vertical
+    if (img.naturalWidth > img.naturalHeight) {
+      // Imagen horizontal
+      container.style.width = '334px'; // Ajusta según necesites
+    } else {
+      // Imagen vertical
+      container.style.width = '178px'; // Ajusta según necesites
+    }
+  }
+});
+
 
 
 
