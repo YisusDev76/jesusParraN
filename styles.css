@@ -189,7 +189,7 @@ img.close-icon {
   width: 40px;
 }
 
-/* Menu en mobile */
+/* Menu Mobile */
 .mobile-menu {
   background-color: var(--dark-color-logo);
   position: fixed;
@@ -205,20 +205,17 @@ img.close-icon {
   z-index: 1;
 }
 
-/* Clase para cuando el menú está activo */
 .mobile-menu.active {
-  transform: translateX(0); /* Lo regresa a su posición original */
+  transform: translateX(0);
 }
 .mobile-menu a {
   text-decoration: none;
   color: var(--black);
   font-weight: bold;
   font-size: var(--lg);
-  /* margin-bottom: 24px; */
 }
 
 .navigation-items {
-  /* flex: 1; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -306,7 +303,7 @@ img.close-icon {
 }
 
 .main-container h1 {
-  font-size: 40px; /* Ajusta al tamaño que desees */
+  font-size: 44px; /* Ajusta al tamaño que desees */
   color: var(--white);
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2),
     9px 9px 0px rgba(0, 0, 0, 0.2);
@@ -365,7 +362,7 @@ img.close-icon {
 
 .icon-circle img {
   width: 50%;
-  height: auto; /* Mantiene la proporción del SVG ajustando su altura automáticamente */
+  height: auto;
 }
 
 /* SECTION: About me */
@@ -629,6 +626,72 @@ img.close-icon {
   z-index: 1001;
 }
 
+/* Footer */
+#social-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Esto permite posicionar el SVG de forma absoluta dentro de él */
+  height: calc(100vh - 60px);
+  overflow-y: hidden;
+}
+
+#social-section > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Esto asegura que el SVG esté detrás del contenido */
+}
+
+#social-section h2{
+  font-size: 50px; /* Ajusta al tamaño que desees */
+  color: var(--white);
+  text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2), 6px 6px 0px rgba(0, 0, 0, 0.2);
+  margin-bottom: 90px;
+  text-align: center;
+}
+
+.icon-circle-footer {
+  margin: 0 150px;
+  background-color: var(--text-input-field);
+  border-radius: 50%; /* Hace que el elemento sea un círculo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.4s; /* Transición suave para el fondo */
+  background-image: linear-gradient(to bottom right, var(--tertiary), white);
+  width: 120px;
+  height: 120px; /* Altura del círculo */
+}
+
+.icon-circle-footer:hover {
+  background-image: linear-gradient(to bottom right, var(--primary), white);
+}
+
+.icon-circle-footer img {
+  width: 65%;
+  height: auto; /* Mantiene la proporción del SVG ajustando su altura automáticamente */
+}
+
+footer{
+  height: 400px;
+}
+
+footer .arrow-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.arrow-container img{
+  width: 50px;
+}
+
 /* Mobile */
 @media (max-width: 740px) {
   .menu {
@@ -757,5 +820,28 @@ img.close-icon {
 
   .info-project h3 {
     font-size: large;
+  }
+
+  /* Social */
+  .icon-circle-footer {
+    margin: 0 20px;
+    width: 100px;
+    height: 100px; /* Altura del círculo */
+
+  }
+
+  #social-section{
+    overflow: hidden;
+  }
+
+  #social-section h2{
+    font-size: 40px; /* Ajusta al tamaño que desees */
+    padding: 20px;
+  }
+
+  #social-section > div {
+    width: 100vh;
+    height: 100vh;
+    overflow: hidden;
   }
 }
