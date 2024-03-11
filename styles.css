@@ -194,7 +194,7 @@ img.close-icon {
   background-color: var(--dark-color-logo);
   position: fixed;
   top: 50px;
-  height: calc(90vh - 68px);
+  height: calc(91vh - 67px);
   left: 0;
   width: 100%;
   transform: translateX(-100%);
@@ -219,13 +219,12 @@ img.close-icon {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Centra el contenido horizontalmente */
+  align-items: center;
   height: 100%;
-  /* padding-left: 25%; */
 }
 
 .menu-item {
-  width: 100%; /* Ocupa el ancho completo de navigation-items */
+  width: 100%;
   display: flex;
   justify-content: center; /* Alinea el contenido al inicio (izquierda) */
   align-items: center; /* Centra verticalmente el texto con respecto al ícono */
