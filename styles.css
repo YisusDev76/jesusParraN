@@ -554,8 +554,8 @@ img.close-icon {
 }
 
 .links-to-project {
-  display: flex; /* Esto habilita flexbox para los elementos dentro de links-to-project */
-  flex-wrap: wrap; /* Esto permite que los elementos se ajusten en filas adicionales si no hay suficiente espacio */
+  display: flex;
+  flex-wrap: inherit; /* Esto permite que los elementos se ajusten en filas adicionales si no hay suficiente espacio */
   margin-top: 10px;
 }
 
@@ -604,7 +604,7 @@ img.close-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh; /* Ajusta al 80% de la altura de la pantalla */
+  height: 80vh;
   padding: 20px;
   margin-top: 100px;
   padding: 20px; /* Asegúrate de ajustar según tus necesidades */

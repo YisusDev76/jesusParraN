@@ -7,10 +7,7 @@ const cardsContainer = document.querySelector('.cards-container');
 const copyEmailIcon = document.querySelector('#copyEmailIcon');
 const emailIcon = document.getElementById('emailIcon');
 const mainContainer = document.querySelector(".main-container");
-
-// Selecciona todas las imágenes de los proyectos
 const projectImages = document.querySelectorAll('.image-project img');
-// Referencia al contenedor del modal
 const modal = document.getElementById('modal-container');
 const modalImageFlex = document.querySelector('.modal-content');
 const modalImage = document.getElementById('modal-image');
@@ -54,12 +51,11 @@ var swiper = new Swiper(".mySwiper", {
   },
 
    breakpoints: {
-    // Cuando el ancho de la ventana es >= 320px (un ejemplo para móviles)
     320: {
       slidesPerView: 3,
       spaceBetween: 4
     },
-    768: { // Este valor es común para tablets o pantallas pequeñas de escritorio
+    768: {
       slidesPerView: 4,
       spaceBetween: 30 // Vuelve al espacio original entre diapositivas
     }
